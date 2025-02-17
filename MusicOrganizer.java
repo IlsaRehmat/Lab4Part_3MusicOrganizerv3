@@ -6,6 +6,66 @@ import java.util.ArrayList;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  */
+/* Part 3 questions
+ * Question 24
+ * public void listAllFiles() {
+    int position = 0;
+    for (String file : files) {
+        System.out.println(position + ": " + file);
+        position++;
+    }
+}
+ * 
+ * Question 28
+ * 
+ * for (Track track : tracks) {
+ *     // Loop body (process each track here)
+ }
+ * 
+ * Question 29
+ * 
+ * boolean found = false;
+ * while (!found) {
+ *     if (the keys are in the next place) {
+ *         found = true;
+ *     }
+ *}
+ *
+ * Question 30
+ * 
+ * public void multiplesOfFive() {
+ *     int num = 10;
+ *     while (num <= 95) {
+ *         System.out.println(num)
+ *         num += 5;
+ *     }
+ * }
+ * 
+ * Question 31
+ * 
+ * public void sumNumbers() {
+ *     int sum = 0;
+ *     int num = 1;
+ *     while (num <= 10) {
+ *         sum += num;
+ *         num++;
+ *     }
+ *     System.out.println("Sum: " + sum);
+ * }
+ * 
+ * Question 32
+ * 
+ * public int sum( int a, int b) {
+ *     int sum = 0;
+ *     while (a <= b) {
+ *         sum += a;
+ *         a++;
+ *     }
+ *     return sum;
+ * }
+ * 
+ * 
+ */
 public class MusicOrganizer
 {
     // An ArrayList for storing the file names of music files.
@@ -131,4 +191,27 @@ public class MusicOrganizer
         }
         return valid;
     }
+     
+    /**
+     * List the names of files matching the given search string.
+     * @param searchString The string to match.
+     */
+    
+    // Question 26
+
+    public void listMatching(String searchString)
+    {
+    for(String filename : files) {
+        boolean foundMatch = false; //Declare a boolean variable to track if a match is found
+        if(filename.contains(searchString)){
+            // A match.
+            System.out.println("Found match :" + filename);
+            foundMatch = true; //Set to true if a match is found
+        }
+        
+        if (!foundMatch) {
+        System.out.println("No files matched the search string.");
+        }
+    }
+}
 }
